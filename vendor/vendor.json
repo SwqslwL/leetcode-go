@@ -1,0 +1,18 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "in7NDfSohOl2q/jeijuniZPN8hY=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "fd197cdcfae0c686792ef5399f223f5b66a30b6b",
+			"revisionTime": "2018-10-31T14:07:16Z"
+		},
+		{
+			"path": "golang.org/x/net/context",
+			"revision": "a4bbce9fcae005b22ae5443f6af064d80a6f5a55",
+			"version": "a4bbce9fcae005b22ae5443f6af064d80a6f5a55"
+		}
+	],
+	"rootPath": "leetcode"
+}

@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func climbStairs(n int) int {
-	if n == 0{
+	if n == 0 {
 		return 1
 	}
-	if n < 0{
+	if n < 0 {
 		return 0
 	}
-	way1 := climbStairs(n-1)
-	way2 := climbStairs(n-2)
-	return way1+way2
+	way1 := climbStairs(n - 1)
+	way2 := climbStairs(n - 2)
+	return way1 + way2
 }
 
 //dynamic programming
@@ -21,7 +21,7 @@ func climbStairsD(n int) int {
 		return n
 	}
 	var t int
-	for i:=3;i<=n;i++{
+	for i := 3; i <= n; i++ {
 		t = a + b
 		a = b
 		b = t
@@ -29,6 +29,6 @@ func climbStairsD(n int) int {
 	return t
 }
 
-func main(){
+func main() {
 	fmt.Println(climbStairsD(5))
 }

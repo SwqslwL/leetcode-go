@@ -9,7 +9,7 @@ func singleNumber(nums []int) int {
 	return a
 }
 
-func main(){
-	nums := []int{5,2,2,1,5}
+func main() {
+	nums := []int{5, 2, 2, 1, 5}
 	singleNumber(nums)
 }

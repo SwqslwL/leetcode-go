@@ -12,26 +12,26 @@ func isValid(s string) bool {
 		"]": "[",
 		"}": "{",
 	}
-	stack := make([]string,0)
+	stack := make([]string, 0)
 	top := -1
-	for _, v :=range s{
+	for _, v := range s {
 
-		if _,ok := dict[string(v)];top!=-1&&ok&&dict[string(v)]==stack[top]{
+		if _, ok := dict[string(v)]; top != -1 && ok && dict[string(v)] == stack[top] {
 			stack = stack[:top]
 			top -= 1
-		}else{
+		} else {
 			stack = append(stack, string(v))
 			top += 1
 		}
 	}
-	if top < 0{
+	if top < 0 {
 		return true
-	}else{
+	} else {
 		return false
 	}
 }
 
-func main(){
+func main() {
 	parentheses := "([])"
 	fmt.Println(isValid(parentheses))
 }

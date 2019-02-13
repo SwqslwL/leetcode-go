@@ -8,26 +8,26 @@ import "fmt"
 *     Val int
 *     Next *ListNode
 * }
-*/
+ */
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
 func hasCycle(head *ListNode) bool {
 	p := head
 	dict := make(map[*ListNode]int)
-	if p == nil{
+	if p == nil {
 		return false
 	}
 	for {
 		//将节点存储在map中
 		dict[p] = p.Val
-		if p.Next == nil{
+		if p.Next == nil {
 			return false
-		}else if _,ok := dict[p.Next];ok{
+		} else if _, ok := dict[p.Next]; ok {
 			return true
-		}else{
+		} else {
 			p = p.Next
 		}
 	}
@@ -38,10 +38,10 @@ func hasCycle2(head *ListNode) bool {
 	slow := head
 	fast := head
 	if head == nil {
-		 return false
+		return false
 	}
 	for {
-		for i:=0 ; i<=1 ;i++{
+		for i := 0; i <= 1; i++ {
 			if !run(&fast) {
 				return false
 			}

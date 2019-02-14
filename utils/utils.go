@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func GetRandNum() int{
+func GetRandNum() int {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for index := 0; index < 10; index++ {
 		fmt.Println(r.Intn(10))
@@ -14,6 +14,6 @@ func GetRandNum() int{
 	return r.Intn(100)
 }
 
-func main(){
+func main() {
 	fmt.Println(GetRandNum())
 }

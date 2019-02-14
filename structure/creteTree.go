@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 type TreeNode struct {
-	Val int
-	left *TreeNode
+	Val   int
+	left  *TreeNode
 	right *TreeNode
 }
 
@@ -20,9 +20,7 @@ func createTree(series []int) *TreeNode {
 	return root
 }
 
-func main(){
-	series := []int{1,2,3,4,5}
+func main() {
+	series := []int{1, 2, 3, 4, 5}
 	createTree(series)
 }
-
-

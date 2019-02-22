@@ -1,4 +1,4 @@
-package main
+package structure
 
 import "fmt"
 
@@ -19,6 +19,11 @@ func createTree(series []int) *TreeNode {
 	//node := new(TreeNode)
 	return root
 }
+
+func createTreeByLevel(series []int) *TreeNode {
+	queue := []int
+}
+
 
 func main() {
 	series := []int{1, 2, 3, 4, 5}

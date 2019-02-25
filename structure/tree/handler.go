@@ -1,11 +1,11 @@
 package tree
 
 import (
+	"fmt"
 	"leetcode/structure/queue"
 )
 type Tree interface {
 	CreateTreeByLevel()
-
 }
 
 type BiTree struct {
@@ -13,6 +13,7 @@ type BiTree struct {
 	rchild *BiTree
 	Val interface{}
 }
+
 
 //series =
 func CreateTreeByLevel (series []interface{}) *BiTree{
@@ -28,15 +29,15 @@ func CreateTreeByLevel (series []interface{}) *BiTree{
 		node = q.DeQueue().(*BiTree)
 		lc := new(BiTree)
 		lc.Val = series[i]
-		node.lchild = lc
-		if lc != nil {
+		if lc.Val != nil {
+			node.lchild = lc
 			q.EnQueue(node.lchild)
 		}
 		if i + 1 < len(series) {
 			rc := new(BiTree)
 			rc.Val = series[i+1]
-			node.rchild = rc
-			if rc != nil {
+			if rc.Val != nil {
+				node.rchild = rc
 				q.EnQueue(node.rchild)
 			}
 		}
@@ -64,14 +65,33 @@ func (t *BiTree) LevelTraversal() []interface{} {
 	return series
 }
 
-func PreOrderTraversal() []interface{}{
-
+func PreOrderTraversal(root *BiTree) {
+	if root == nil{
+		return
+	}
+	Visit(root)
+	PreOrderTraversal(root.lchild)
+	PreOrderTraversal(root.rchild)
 }
 
-func InOrderTraversal() []interface{} {
-
+func InOrderTraversal(root *BiTree) []interface{} {
+	if root != nil {
+		InOrderTraversal(root.lchild)
+		Visit(root)
+		InOrderTraversal(root.rchild)
+	}
+	return nil
 }
 
-func PostOrderTraversal()[]interface{} {
+func PostOrderTraversal(root *BiTree)[]interface{} {
+	if root != nil {
+		PostOrderTraversal(root.lchild)
+		PostOrderTraversal(root.rchild)
+		Visit(root)
+	}
+	return nil
+}
 
+func Visit(node *BiTree) {
+	fmt.Print(node.Val, " ")
 }
